@@ -34,10 +34,27 @@
         <label>Grind zone
           <select id="zone"></select>
         </label>
-        <label>Kills per hour (optional)
-          <input id="killsPerHour" type="number" min="0" step="1" placeholder="e.g. 9000">
-        </label>
       </div>
+
+      <fieldset class="mobs">
+        <legend>Kills per hour by mob (optional)</legend>
+        <p class="hint">Enter how many of each mob you kill per hour to get a weighted EXP per kill and a time estimate. Leave blank to use the zone's average non-elite mob.</p>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Mob</th>
+                <th>Base EXP</th>
+                <th>Kills / hour</th>
+                <th>EXP / kill <small>(at current level)</small></th>
+                <th>EXP / hour</th>
+              </tr>
+            </thead>
+            <tbody id="mobRows"></tbody>
+            <tfoot id="mobTotals"></tfoot>
+          </table>
+        </div>
+      </fieldset>
 
       <fieldset>
         <legend>Combat EXP buffs</legend>
@@ -62,12 +79,30 @@
               <th>Buff to cap</th>
               <th>EXP / kill</th>
               <th>Kills</th>
+              <th>Time</th>
             </tr>
           </thead>
           <tbody id="levels"></tbody>
         </table>
       </div>
     </section>
+
+    <details class="card changelog">
+      <summary>Changelog</summary>
+
+      <h3>October 8, 2026</h3>
+      <ul>
+        <li>Added mob lists with EXP values for all six Edania Part 2 grind zones: Aphrodon, Hermesia, Magaia, Aresion, Scales of Judgment and Event Horizon.</li>
+        <li>Added a kills per hour input for each mob, giving a weighted EXP per kill, EXP per hour and a time estimate. Entries are saved per zone in your browser.</li>
+        <li>Elite mobs are now tagged and left out of the zone average used when no kills per hour are entered.</li>
+        <li>Zone levels now show before zone names.</li>
+        <li>Added a "Buff to cap" column showing the buff % at which kills hit the EXP cap.</li>
+        <li>Levels without EXP data are greyed out in the level dropdowns.</li>
+        <li>Added level EXP data for 61, 62, 63, 64, 66 and 69.</li>
+        <li>Added a work-in-progress notice.</li>
+        <li>Early implementation: level, progress, zone and buff inputs, EXP cap by level, and kills needed per level.</li>
+      </ul>
+    </details>
   </main>
 
   <script src="data.js"></script>

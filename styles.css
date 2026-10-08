@@ -38,6 +38,11 @@ h2 { margin: 0 0 12px; font-size: 18px; }
 .notice strong { color: var(--accent); }
 .discord { color: var(--accent); font-weight: 600; }
 
+.changelog summary { cursor: pointer; font-weight: 600; font-size: 18px; }
+.changelog h3 { margin: 16px 0 4px; font-size: 14px; color: var(--accent); }
+.changelog ul { margin: 0; padding-left: 20px; color: var(--muted); }
+.changelog li { margin: 4px 0; }
+
 .card {
   background: var(--card);
   border: 1px solid var(--border);
@@ -65,6 +70,23 @@ input, select {
 }
 
 option:disabled { color: #5a5f68; }
+
+.mobs { margin-bottom: 12px; }
+.hint { margin: 0 0 8px; color: var(--muted); font-size: 13px; }
+.mobs input { width: 100px; padding: 4px 6px; text-align: right; }
+.mobs tfoot td { font-weight: 600; border-bottom: none; }
+th small { font-weight: 400; }
+.elite {
+  display: inline-block;
+  margin-left: 6px;
+  padding: 0 6px;
+  border: 1px solid var(--accent);
+  border-radius: 4px;
+  color: var(--accent);
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
 
 fieldset { border: 1px solid var(--border); border-radius: 6px; margin: 0; padding: 12px; }
 legend { color: var(--muted); font-size: 13px; padding: 0 4px; }
