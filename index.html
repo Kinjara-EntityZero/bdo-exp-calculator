@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BDO EXP Calculator</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main>
+    <h1>BDO EXP Calculator</h1>
+    <p class="sub">How many monsters until your next level?</p>
+
+    <div class="notice" role="alert">
+      <strong>Heavily work in progress.</strong>
+      Not all data is available yet, so some levels, zones and buffs are missing or may be inaccurate.
+      Want to help supply data? Contact me on Discord: <span class="discord">Kinjara</span>
+    </div>
+
+    <section class="card inputs">
+      <div class="row">
+        <label>Current level
+          <select id="currentLevel"></select>
+        </label>
+        <label>Current progress (%)
+          <input id="progress" type="number" min="0" max="99.999" step="0.001" value="0">
+        </label>
+        <label>Target level
+          <select id="targetLevel"></select>
+        </label>
+      </div>
+
+      <div class="row">
+        <label>Grind zone
+          <select id="zone"></select>
+        </label>
+        <label>Kills per hour (optional)
+          <input id="killsPerHour" type="number" min="0" step="1" placeholder="e.g. 9000">
+        </label>
+      </div>
+
+      <fieldset>
+        <legend>Combat EXP buffs</legend>
+        <div id="buffs" class="buffs"></div>
+        <label class="custom">Other bonus (%)
+          <input id="customBuff" type="number" step="1" value="0">
+        </label>
+      </fieldset>
+    </section>
+
+    <section class="card" id="summary"></section>
+
+    <section class="card">
+      <h2>Per level</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Level</th>
+              <th>EXP required</th>
+              <th>Cap / kill</th>
+              <th>Buff to cap</th>
+              <th>EXP / kill</th>
+              <th>Kills</th>
+            </tr>
+          </thead>
+          <tbody id="levels"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
